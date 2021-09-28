@@ -1,0 +1,42 @@
+<div class="results__container">
+  <div class="results__subContainer">
+    <div *ngFor="let v of youtubeData.items">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.youtube.com/watch?v={{ v.id.videoId }}"
+      >
+        <div class="results-video__container">
+          <img
+            src="{{ v.snippet.thumbnails.default.url }}"
+            alt="video thumbnail"
+          />
+          <div class="results-video__subContainer">
+            <p id="vid-title">
+              {{ v.snippet.title | fixTitle }}
+            </p>
+            <p id="vid-channel">{{ v.snippet.channelTitle }}</p>
+            <p id="vid-description">
+              {{ v.snippet.description }}
+              <!-- {snippet.description.slice(0, 100).replace("&#39;",
+              "'").replace("&quot;", "'")}... -->
+            </p>
+          </div>
+        </div>
+      </a>
+      <hr />
+    </div>
+  </div>
+  <div class="results__subContainer">
+    <p class="results-title">Wiki</p>
+    <hr />
+
+    <p id="wiki-description">
+      {{ wikiData | removeHtml }}
+    </p>
+    <p id="wiki-view">
+      View the wiki page
+      <a href="" target="_blank" rel="noreferrer"> here </a>
+    </p>
+  </div>
+</div>

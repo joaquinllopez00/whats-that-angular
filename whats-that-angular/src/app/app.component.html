@@ -1,0 +1,41 @@
+<div id="container" *ngIf="!results">
+  <div class="searchBar__container">
+    <div class="search__subContainer">
+      <h1>What's That?</h1>
+    </div>
+    <div class="search__subContainer">
+      <div class="search-input__container">
+        <form>
+          <input
+            class="search-input"
+            type="text"
+            [(ngModel)]="searchKeyword"
+            name="keyword"
+            (keyup.enter)="onSearch($event)"
+          />
+        </form>
+      </div>
+      <div class="footer__container">
+        <span class="glyphicon glyphicon-heart"></span>
+        <p>Made with love by</p>
+        <a
+          href="https://www.linkedin.com/in/joaquin-lopez-a955451a8/"
+          target="__blank"
+        >
+          Joaquin
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="container" *ngIf="results">
+  <div className="searchResults__container">
+    <h1>
+      What's
+      <h1 id="whats">{{ searchKeyword + "?" }}</h1>
+    </h1>
+    <div className="searchResults-content__container">
+      <app-results [search-keyword]="searchKeyword"></app-results>
+    </div>
+  </div>
+</div>
