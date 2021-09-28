@@ -1,2 +1,2 @@
 # whats-that-angular
-A simple app i've build previously using React, but with Angular and TypeScript
+A simple app I had built previously using React, but with Angular and TypeScript
